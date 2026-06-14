@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# card — 프로젝트 venv 파이썬으로 card.py 실행하는 래퍼.
+#   ./card check | ./card pull [YYYYMM] | ./card evidence [YYYYMM]
+# PATH 에 두고 싶으면:  alias card="$PWD/card"
+set -euo pipefail
+DIR="$(cd "$(dirname "$0")" && pwd)"
+exec "$DIR/.venv/bin/python" "$DIR/card.py" "$@"
